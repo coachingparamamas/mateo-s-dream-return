@@ -1,25 +1,56 @@
 import React from 'react';
-import { Heart, Music, Users } from 'lucide-react';
+import { Heart, Music, Users, Sparkles } from 'lucide-react';
+import bookCover from '@/assets/book-cover.jpg';
 
 const BookDescription: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Main Description */}
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Sobre el libro
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed">
-              <span className="text-foreground font-semibold">"El sueño de regresar"</span> es la historia de Mateo, 
-              un niño venezolano que emigra a un nuevo país, como miles de niños lo han hecho en los últimos años. 
-              Aunque está lejos de casa, Mateo nunca deja atrás a Venezuela, gracias a su abuela Margarita. 
-              Cada noche, ella le canta <span className="text-terracotta italic">"Mi querencia"</span>, 
-              y mientras se duerme, Mateo sueña con su tierra: baila joropo bajo cielos estrellados, 
-              saborea arepas recién hechas, camina junto al Orinoco, y conoce Las Posadas, 
-              La Cruz de Mayo y otras tradiciones queridas.
-            </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Book Cover */}
+            <div className="relative animate-fade-in-up">
+              <div className="absolute -inset-4 bg-terracotta/10 rounded-3xl blur-xl" />
+              <img
+                src={bookCover}
+                alt="Portada del libro El sueño de regresar mostrando a Mateo rodeado de hojas verdes y mariposas"
+                className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto"
+              />
+            </div>
+            
+            {/* Description */}
+            <div className="text-center lg:text-left animate-fade-in-up animation-delay-200">
+              <div className="flex items-center gap-2 justify-center lg:justify-start mb-4">
+                <Sparkles className="w-5 h-5 text-golden" />
+                <span className="text-sm font-display font-semibold text-golden uppercase tracking-wider">
+                  Sobre el libro
+                </span>
+              </div>
+              
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Una historia de amor, raíces y sueños
+              </h2>
+              
+              <p className="text-lg text-muted-foreground font-body leading-relaxed mb-6">
+                <span className="text-foreground font-semibold">"El sueño de regresar"</span> es la historia de Mateo, 
+                un niño venezolano que emigra a un nuevo país. Aunque está lejos de casa, 
+                Mateo nunca deja atrás a Venezuela, gracias a su abuela Margarita.
+              </p>
+              
+              <p className="text-muted-foreground font-body leading-relaxed">
+                Cada noche, ella le canta <span className="text-terracotta italic">"Mi querencia"</span>, 
+                y mientras se duerme, Mateo emprende un viaje mágico guiado por el Espíritu de la Sabana 
+                y un loro parlanchín. Juntos le muestran los paisajes, las historias y las maravillas 
+                de Venezuela, la tierra que habita en su memoria.
+              </p>
+              
+              <div className="mt-6 p-4 bg-terracotta/5 rounded-xl border border-terracotta/10">
+                <p className="text-sm text-muted-foreground font-body italic">
+                  Escrito por <span className="text-foreground font-semibold">Yoly Soledad Pérez Albuysech</span><br/>
+                  Ilustrado por <span className="text-foreground font-semibold">Nerea Jiménez Mesa</span>
+                </p>
+              </div>
+            </div>
           </div>
           
           {/* Feature Icons */}

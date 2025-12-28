@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, BookOpen } from 'lucide-react';
 
 const AuthorNote: React.FC = () => {
   return (
@@ -12,21 +12,47 @@ const AuthorNote: React.FC = () => {
               <Sparkles className="w-6 h-6 text-golden/50" />
             </div>
             <div className="absolute bottom-4 left-4">
-              <Sparkles className="w-6 h-6 text-terracotta/50" />
+              <BookOpen className="w-6 h-6 text-terracotta/50" />
             </div>
             
             <div className="text-center">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
-                Nota de la autora
+                Sobre las creadoras
               </h2>
               
-              <blockquote className="text-lg md:text-xl text-muted-foreground font-body italic leading-relaxed">
-                "Escrito por una pediatra y defensora del bienestar emocional infantil, 
-                inspirado en historias reales de familias venezolanas que navegan el cambio 
-                con amor y resiliencia. Este libro nació de observar cómo los niños procesan 
-                la distancia, la nostalgia y la esperanza—y cómo el amor de una abuela puede 
-                convertirse en el puente más fuerte hacia casa."
-              </blockquote>
+              <div className="space-y-6">
+                <div className="p-4 bg-card/50 rounded-xl">
+                  <h3 className="font-display font-bold text-foreground mb-2">
+                    Yoly Soledad Pérez Albuysech
+                  </h3>
+                  <p className="text-muted-foreground font-body italic">
+                    Autora del texto
+                  </p>
+                  <p className="text-sm text-muted-foreground font-body mt-2">
+                    Pediatra y defensora del bienestar emocional infantil. 
+                    Este libro nació de su experiencia acompañando a familias 
+                    venezolanas que navegan el cambio con amor y resiliencia.
+                  </p>
+                </div>
+                
+                <div className="p-4 bg-card/50 rounded-xl">
+                  <h3 className="font-display font-bold text-foreground mb-2">
+                    Nerea Jiménez Mesa
+                  </h3>
+                  <p className="text-muted-foreground font-body italic">
+                    Ilustradora
+                  </p>
+                  <p className="text-sm text-muted-foreground font-body mt-2">
+                    Sus ilustraciones capturan la magia y la calidez de los sueños de Mateo, 
+                    trayendo a vida los paisajes de Venezuela con ternura y color.
+                  </p>
+                </div>
+              </div>
+              
+              <p className="mt-6 text-sm text-muted-foreground font-body italic">
+                "A mis hijos Andrea, Nicole y Marcos y a todos los hijos de quienes 
+                estamos fuera de nuestra querencia"
+              </p>
             </div>
           </div>
         </div>

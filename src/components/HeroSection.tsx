@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { StarField } from '@/components/Star';
-import heroIllustration from '@/assets/hero-illustration.jpg';
+import abuelaMateo from '@/assets/abuela-mateo.jpg';
 
 const HeroSection: React.FC = () => {
   return (
@@ -45,9 +45,9 @@ const HeroSection: React.FC = () => {
             <div className="relative animate-float">
               <div className="absolute -inset-4 bg-golden/20 rounded-3xl blur-2xl" />
               <img
-                src={heroIllustration}
-                alt="Ilustración de Mateo y su Abuela Margarita bajo un cielo estrellado, abrazados con ternura mientras las estrellas brillan sobre ellos"
-                className="relative rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
+                src={abuelaMateo}
+                alt="Ilustración de Mateo en su cama con su Abuela Margarita sentada a su lado, en una escena nocturna llena de estrellas y una cálida manta de colores"
+                className="relative rounded-2xl shadow-2xl w-full max-w-2xl mx-auto"
               />
             </div>
           </div>
