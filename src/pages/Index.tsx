@@ -1,13 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import HeroSection from '@/components/HeroSection';
+import DreamCarousel from '@/components/DreamCarousel';
+import BookDescription from '@/components/BookDescription';
+import WhyItMatters from '@/components/WhyItMatters';
+import AuthorNote from '@/components/AuthorNote';
+import Testimonials from '@/components/Testimonials';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>El sueño de regresar | Cuento infantil venezolano sobre migración e identidad</title>
+        <meta 
+          name="description" 
+          content="Un cuento ilustrado sobre Mateo, un niño venezolano que sueña con su tierra cada noche gracias al amor de su abuela. Historia de identidad cultural, migración y lazos intergeneracionales." 
+        />
+        <meta name="keywords" content="cuento infantil venezolano, migración y niños, identidad cultural, abuela y nieto, libro bilingüe migración, Mi querencia para niños, libro para niños migrantes, tradiciones venezolanas" />
+        <meta property="og:title" content="El sueño de regresar | Cuento infantil venezolano" />
+        <meta property="og:description" content="Cada noche, una canción lo lleva a casa. Un libro ilustrado sobre identidad, memoria y el amor que trasciende distancias." />
+        <meta property="og:type" content="book" />
+        <link rel="canonical" href="https://elsuenodegresar.com" />
+      </Helmet>
+      
+      <main>
+        <HeroSection />
+        <DreamCarousel />
+        <BookDescription />
+        <WhyItMatters />
+        <AuthorNote />
+        <Testimonials />
+        <CTASection />
+        <Footer />
+      </main>
+    </>
   );
 };
 
