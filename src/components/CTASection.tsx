@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Download, Gift } from 'lucide-react';
+import { BookOpen, Download, Gift, X, Palette } from 'lucide-react';
+
+const coloringPages = [
+  {
+    title: 'El Espíritu de la Sabana',
+    file: '/downloads/colorear-espiritu-sabana.png',
+    preview: '/downloads/colorear-espiritu-sabana.png',
+  },
+  {
+    title: 'Mateo y Venezuela',
+    file: '/downloads/colorear-mateo-venezuela.png',
+    preview: '/downloads/colorear-mateo-venezuela.png',
+  },
+  {
+    title: 'La Guacamaya y las Orquídeas',
+    file: '/downloads/colorear-guacamaya.png',
+    preview: '/downloads/colorear-guacamaya.png',
+  },
+];
 
 const CTASection: React.FC = () => {
+  const [showDownloads, setShowDownloads] = useState(false);
+
+  const handleDownload = (file: string, title: string) => {
+    const link = document.createElement('a');
+    link.href = file;
+    link.download = `${title.replace(/\s+/g, '-').toLowerCase()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="py-16 md:py-24 bg-hero-gradient relative overflow-hidden">
       {/* Decorative stars */}
@@ -36,11 +65,71 @@ const CTASection: React.FC = () => {
               <BookOpen className="w-5 h-5" />
               Pre-ordenar el libro ilustrado
             </Button>
-            <Button variant="heroSecondary" size="xl" className="gap-3">
+            <Button 
+              variant="heroSecondary" 
+              size="xl" 
+              className="gap-3"
+              onClick={() => setShowDownloads(!showDownloads)}
+            >
               <Download className="w-5 h-5" />
               Actividades gratis
             </Button>
           </div>
+
+          {/* Downloads Modal/Panel */}
+          {showDownloads && (
+            <div className="mb-8 bg-card/95 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-golden/30 shadow-2xl animate-fade-in">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2">
+                  <Palette className="w-5 h-5 text-golden" />
+                  <h3 className="font-display text-xl font-bold text-foreground">
+                    Páginas para colorear
+                  </h3>
+                </div>
+                <button 
+                  onClick={() => setShowDownloads(false)}
+                  className="p-1 hover:bg-muted rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5 text-muted-foreground" />
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {coloringPages.map((page, index) => (
+                  <div 
+                    key={index}
+                    className="group bg-white rounded-xl overflow-hidden border border-border hover:border-golden/50 transition-all hover:shadow-lg"
+                  >
+                    <div className="aspect-[3/4] bg-white p-2">
+                      <img 
+                        src={page.preview} 
+                        alt={page.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="p-3 bg-muted/50">
+                      <p className="text-sm font-medium text-foreground mb-2 truncate">
+                        {page.title}
+                      </p>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full gap-2 text-xs"
+                        onClick={() => handleDownload(page.file, page.title)}
+                      >
+                        <Download className="w-3 h-3" />
+                        Descargar
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                ¡Imprime y colorea estos dibujos inspirados en el libro!
+              </p>
+            </div>
+          )}
           
           {/* Free resources preview */}
           <div className="bg-night-sky/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-starlight/20">
