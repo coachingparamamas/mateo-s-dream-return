@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Download, Gift, X, Palette } from 'lucide-react';
 
@@ -23,6 +23,16 @@ const coloringPages = [
 const CTASection: React.FC = () => {
   const [showDownloads, setShowDownloads] = useState(false);
 
+  // Listen for custom event from hero button
+  useEffect(() => {
+    const handleOpenDownloads = () => {
+      setShowDownloads(true);
+    };
+    
+    window.addEventListener('openDownloads', handleOpenDownloads);
+    return () => window.removeEventListener('openDownloads', handleOpenDownloads);
+  }, []);
+
   const handleDownload = (file: string, title: string) => {
     const link = document.createElement('a');
     link.href = file;
@@ -33,7 +43,7 @@ const CTASection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-hero-gradient relative overflow-hidden">
+    <section id="cta-section" className="py-16 md:py-24 bg-hero-gradient relative overflow-hidden">
       {/* Decorative stars */}
       <div className="absolute inset-0 opacity-30">
         {[...Array(20)].map((_, i) => (
