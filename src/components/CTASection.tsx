@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Download, Gift, X, Palette } from 'lucide-react';
+import { BookOpen, Download, Gift, X, Palette, Music } from 'lucide-react';
 
 const coloringPages = [
   {
@@ -149,12 +149,22 @@ const CTASection: React.FC = () => {
                 Recursos gratuitos incluyen:
               </span>
             </div>
-            <div className="flex flex-wrap justify-center gap-3 text-sm text-starlight/70">
+            <div className="flex flex-wrap justify-center gap-3 text-sm text-starlight/70 mb-6">
               <span className="px-3 py-1 bg-starlight/10 rounded-full">Páginas para colorear</span>
               <span className="px-3 py-1 bg-starlight/10 rounded-full">Diario de sueños</span>
-              <span className="px-3 py-1 bg-starlight/10 rounded-full">Letra de "Mi querencia"</span>
               <span className="px-3 py-1 bg-starlight/10 rounded-full">Guía para educadores</span>
             </div>
+            
+            {/* Mi querencia link */}
+            <a 
+              href="https://youtu.be/NXpkBhteGIQ?si=5ZMp-BOdnrdX2Vs8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-golden/20 to-terracotta/20 hover:from-golden/30 hover:to-terracotta/30 border border-golden/30 rounded-full text-starlight font-medium transition-all hover:scale-105"
+            >
+              <Music className="w-4 h-4 text-golden" />
+              <span>Escuchar "Mi querencia"</span>
+            </a>
           </div>
         </div>
       </div>
