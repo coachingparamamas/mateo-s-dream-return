@@ -34,7 +34,18 @@ const HeroSection: React.FC = () => {
               <Button variant="hero" size="xl">
                 Pre-ordenar el libro
               </Button>
-              <Button variant="heroSecondary" size="xl">
+              <Button 
+                variant="heroSecondary" 
+                size="xl"
+                onClick={() => {
+                  const ctaSection = document.getElementById('cta-section');
+                  if (ctaSection) {
+                    ctaSection.scrollIntoView({ behavior: 'smooth' });
+                    // Dispatch custom event to open downloads
+                    window.dispatchEvent(new CustomEvent('openDownloads'));
+                  }
+                }}
+              >
                 Descargar actividades gratis
               </Button>
             </div>
