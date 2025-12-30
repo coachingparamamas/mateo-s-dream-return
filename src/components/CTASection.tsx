@@ -155,16 +155,26 @@ const CTASection: React.FC = () => {
               <span className="px-3 py-1 bg-starlight/10 rounded-full">Guía para educadores</span>
             </div>
             
-            {/* Mi querencia link */}
-            <a 
-              href="https://youtu.be/NXpkBhteGIQ?si=5ZMp-BOdnrdX2Vs8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-golden/20 to-terracotta/20 hover:from-golden/30 hover:to-terracotta/30 border border-golden/30 rounded-full text-starlight font-medium transition-all hover:scale-105"
-            >
-              <Music className="w-4 h-4 text-golden" />
-              <span>Escuchar "Mi querencia"</span>
-            </a>
+            {/* Mi querencia embedded video */}
+            <div className="mt-2">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Music className="w-4 h-4 text-golden" />
+                <span className="text-starlight font-medium">Escucha "Mi querencia"</span>
+              </div>
+              <div className="aspect-video max-w-md mx-auto rounded-xl overflow-hidden border border-golden/30 shadow-lg">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/NXpkBhteGIQ?si=Rd5nz8RgKneAHRMx" 
+                  title="Mi querencia - YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
