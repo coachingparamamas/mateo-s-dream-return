@@ -5,6 +5,7 @@ import DreamCarousel from '@/components/DreamCarousel';
 import BookDescription from '@/components/BookDescription';
 import WhyItMatters from '@/components/WhyItMatters';
 import Curiosidades from '@/components/Curiosidades';
+import DreamJournal from '@/components/DreamJournal';
 import AuthorNote from '@/components/AuthorNote';
 import Testimonials from '@/components/Testimonials';
 import CTASection from '@/components/CTASection';
@@ -32,6 +33,7 @@ const Index: React.FC = () => {
         <BookDescription />
         <WhyItMatters />
         <Curiosidades />
+        <DreamJournal />
         <AuthorNote />
         <Testimonials />
         <CTASection />
