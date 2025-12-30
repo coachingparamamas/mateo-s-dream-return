@@ -14,7 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      dream_wall_entries: {
+        Row: {
+          author_name: string | null
+          category: Database["public"]["Enums"]["wall_category"]
+          content: string
+          created_at: string
+          id: string
+        }
+        Insert: {
+          author_name?: string | null
+          category: Database["public"]["Enums"]["wall_category"]
+          content: string
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          author_name?: string | null
+          category?: Database["public"]["Enums"]["wall_category"]
+          content?: string
+          created_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +46,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      wall_category: "canciones" | "lugares" | "sabores" | "olores" | "sueños"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +173,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      wall_category: ["canciones", "lugares", "sabores", "olores", "sueños"],
+    },
   },
 } as const
