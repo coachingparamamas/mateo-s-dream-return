@@ -1,21 +1,10 @@
 import React from 'react';
 import { Heart, Mail, Instagram, Facebook } from 'lucide-react';
-import espirituSabana from '@/assets/espiritu-sabana.jpg';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-foreground text-starlight">
-      {/* Book illustration banner */}
-      <div className="relative w-full h-48 md:h-64 overflow-hidden">
-        <img 
-          src={espirituSabana} 
-          alt="Ilustración del Espíritu de la Sabana del libro El sueño de regresar" 
-          className="w-full h-full object-cover object-center opacity-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/50 to-foreground" />
-      </div>
-
-      <div className="container mx-auto px-4 py-12 -mt-8 relative z-10">
+    <footer className="bg-foreground text-starlight py-12">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Charitable note */}
           <div className="text-center mb-10 p-6 bg-terracotta/10 rounded-2xl">
