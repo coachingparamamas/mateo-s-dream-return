@@ -1,10 +1,21 @@
 import React from 'react';
 import { Heart, Mail, Instagram, Facebook } from 'lucide-react';
+import orinocoTepuyes from '@/assets/orinoco-tepuyes.jpg';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-foreground text-starlight py-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-foreground text-starlight">
+      {/* Book illustration banner */}
+      <div className="relative w-full h-48 md:h-64 overflow-hidden">
+        <img 
+          src={orinocoTepuyes} 
+          alt="Ilustración del Orinoco y los tepuyes venezolanos" 
+          className="w-full h-full object-cover object-center opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/50 to-foreground" />
+      </div>
+
+      <div className="container mx-auto px-4 py-12 -mt-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Charitable note */}
           <div className="text-center mb-10 p-6 bg-terracotta/10 rounded-2xl">
