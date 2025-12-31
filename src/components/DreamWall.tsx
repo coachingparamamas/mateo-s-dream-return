@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Music, MapPin, Utensils, Wind, Sparkles, Plus, Send } from 'lucide-react';
+import { Music, MapPin, Utensils, Wind, Sparkles, Plus, Send, Heart } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 
-type WallCategory = 'canciones' | 'lugares' | 'sabores' | 'olores' | 'sueños';
+type WallCategory = 'canciones' | 'lugares' | 'sabores' | 'olores' | 'sueños' | 'recuerdos';
 
 interface WallEntry {
   id: string;
@@ -61,6 +61,15 @@ const categories = [
     bgColor: 'from-caribbean/25 to-golden/25',
     borderColor: 'border-caribbean',
     prompt: '¿Con qué sueñas de tu tierra?'
+  },
+  {
+    id: 'recuerdos' as WallCategory,
+    title: 'Recuerdos',
+    subtitle: 'Memorias del corazón',
+    icon: Heart,
+    bgColor: 'from-terracotta/25 to-golden/25',
+    borderColor: 'border-terracotta',
+    prompt: '¿Qué recuerdo especial tienes de Venezuela?'
   },
 ];
 
