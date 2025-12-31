@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart, Mail, Instagram, Facebook } from 'lucide-react';
-import orinocoTepuyes from '@/assets/orinoco-tepuyes.jpg';
+import espirituSabana from '@/assets/espiritu-sabana.jpg';
 
 const Footer: React.FC = () => {
   return (
@@ -8,9 +8,9 @@ const Footer: React.FC = () => {
       {/* Book illustration banner */}
       <div className="relative w-full h-48 md:h-64 overflow-hidden">
         <img 
-          src={orinocoTepuyes} 
-          alt="Ilustración del Orinoco y los tepuyes venezolanos" 
-          className="w-full h-full object-cover object-center opacity-40"
+          src={espirituSabana} 
+          alt="Ilustración del Espíritu de la Sabana del libro El sueño de regresar" 
+          className="w-full h-full object-cover object-center opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/50 to-foreground" />
       </div>
