@@ -46,7 +46,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      wall_category: "canciones" | "lugares" | "sabores" | "olores" | "sueños"
+      wall_category:
+        | "canciones"
+        | "lugares"
+        | "sabores"
+        | "olores"
+        | "sueños"
+        | "recuerdos"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -174,7 +180,14 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      wall_category: ["canciones", "lugares", "sabores", "olores", "sueños"],
+      wall_category: [
+        "canciones",
+        "lugares",
+        "sabores",
+        "olores",
+        "sueños",
+        "recuerdos",
+      ],
     },
   },
 } as const
