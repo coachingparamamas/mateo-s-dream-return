@@ -29,7 +29,7 @@ const AuthorNote: React.FC = () => {
                     Autora del texto
                   </p>
                   <p className="text-sm text-muted-foreground font-body mt-2">
-                    Pediatra y defensora del bienestar emocional infantil. 
+                    Estudiante de Psicología y defensora del bienestar emocional infantil. 
                     Este libro nació de su experiencia acompañando a familias 
                     venezolanas que navegan el cambio con amor y resiliencia.
                   </p>
